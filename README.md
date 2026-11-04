@@ -71,7 +71,7 @@ ollama serve
 - Castling, en passant and promotion.
 - Draw by the 50-move rule and insufficient material.
 - Moves that leave your own king in check are rejected.
-- Move generation validated with perft on reference positions.
+- Legal move generation, check, checkmate and stalemate are handled in the game logic.
 
 ## Project structure
 
