@@ -1,8 +1,8 @@
 # Chess in Java
 
-A terminal chess game for two players or against a local Ollama model. Everything runs from a single Java file with no external libraries.
+Terminal chess game for two players or against a local Ollama model. Everything runs from a single Java file with no external libraries.
 
-> The game menu and the code comments are in Portuguese (this is a Brazilian project). This README is in English.
+> The menu and code comments are in Portuguese; this README is in English.
 
 ## Install Java (once)
 
@@ -10,11 +10,9 @@ A terminal chess game for two players or against a local Ollama model. Everythin
 winget install -e --id EclipseAdoptium.Temurin.21.JDK
 ```
 
-Close and reopen the terminal after installing. You can also download it from [adoptium.net](https://adoptium.net).
+Or download it from [adoptium.net](https://adoptium.net). Reopen the terminal after installing.
 
 ## Play
-
-From the project folder:
 
 ```powershell
 .\jogar.cmd
@@ -34,20 +32,17 @@ java Xadrez.java
 0 - Exit
 ```
 
-In Ollama mode you also choose the difficulty (Easy, Medium or Hard) and which side you want to play.
+In Ollama mode you also choose the difficulty (Easy, Medium or Hard) and your side.
 
 ## How to play
 
-- Enter the origin and destination squares: `e2 e4`, `e2e4` or `e2-e4`.
+- Enter origin and destination squares: `e2 e4`, `e2e4` or `e2-e4`.
 - Castling: move the king two squares (`e1 g1` or `e1 c1`).
 - En passant: move the pawn to the capture square.
 - Promotion: choose `D` (queen), `T` (rook), `B` (bishop) or `C` (knight).
 - `ajuda` shows the commands; `sair` exits.
 
-## Pieces
-
-- White pieces are UPPERCASE; black pieces are lowercase.
-- `P` pawn, `T` rook, `C` knight, `B` bishop, `D` queen, `R` king.
+Pieces: UPPERCASE for White, lowercase for Black. `P` pawn, `T` rook, `C` knight, `B` bishop, `D` queen, `R` king.
 
 ## Difficulty (Ollama)
 
@@ -62,22 +57,17 @@ ollama serve
 ```
 
 - Default model: `qwen2.5:3b`.
-- Use another model: `$env:OLLAMA_MODEL = "llama3.2:1b"`.
+- Change it with `$env:OLLAMA_MODEL = "llama3.2:1b"`.
 - If Ollama is not running, player vs player still works.
 
 ## Rules
 
-- Full legal move validation, check, checkmate and stalemate.
-- Castling, en passant and promotion.
-- Draw by the 50-move rule and insufficient material.
-- Moves that leave your own king in check are rejected.
-- Legal move generation, check, checkmate and stalemate are handled in the game logic.
+Full legal move validation, check, checkmate, stalemate, castling, en passant and promotion. Draw by the 50-move rule and insufficient material. Moves that leave your own king in check are rejected.
 
-## Project structure
+## Structure
 
 ```text
-xadrez/
-├── Xadrez.java   # the whole game
-├── jogar.cmd     # Windows launcher
+├── Xadrez.java   The whole game
+├── jogar.cmd     Windows launcher
 └── README.md
 ```
